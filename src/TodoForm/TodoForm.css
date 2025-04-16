@@ -1,0 +1,46 @@
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+    margin: 10px;
+}
+
+label {
+    font-size: 20px;
+}
+
+textarea {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    resize: vertical;
+    field-sizing: content;
+}
+
+.TodoForm-buttonContainer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.TodoForm-button {
+    color: black;
+	background-color: rgba(255, 255, 255, 0.9);
+	font-size: 0.8rem;
+	font-weight: bold;
+    border: 1px solid #ccc;
+	border-radius: 10px;
+	cursor: pointer;
+	padding: 10px 20px;
+	transition: .3s ease-in-out;
+}
+
+.TodoForm-button:hover {
+    background-color: #ccc;
+}
+
+.TodoForm-button--cancel {
+    color: #808080;
+}

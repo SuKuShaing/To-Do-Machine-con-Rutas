@@ -1,0 +1,21 @@
+.TodoItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 10px;
+    background-color: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    border: 2px solid #fff;
+    border-radius: 10px;
+}
+
+.TodoItem-p {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.TodoItem-p--complete {
+    text-decoration: line-through;
+    color: #a2a2a2;
+}

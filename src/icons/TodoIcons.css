@@ -1,0 +1,31 @@
+.Icon-container{
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.Icon-container-check {
+}
+
+.Icon-container-delete {
+}
+
+.Icon-container-check--active {
+    /* color: green;
+    font-weight: bold; */
+}
+
+.Icon-svg {
+    --size-svg: 20px;
+    width: var(--size-svg);
+    height: var(--size-svg);
+}
+
+.Icon-container-check:hover .Icon-svg {
+    fill: green;
+}
+
+.Icon-container-delete:hover .Icon-svg {
+    fill: red;
+}
