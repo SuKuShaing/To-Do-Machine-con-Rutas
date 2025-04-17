@@ -3,6 +3,8 @@ import { HashRouter, Route, Routes } from "react-router-dom";
 import { HomePage } from "./home/HomePage";
 import { NewToDoPage } from "./new/NewToDoPage";
 import { EditToDoPage } from "./edit/EditToDoPage";
+import { NotFound } from "./notFound/NotFound";
+
 import { TodoProvider } from "../ui/todoContext/index.js";
 
 function App() {
@@ -14,6 +16,7 @@ function App() {
 					<Route path="/new" element={<NewToDoPage />} />
 					{/* hay un Hook llamada useParams de react router-dom que permite acceder a los parámetros de la URL */}
 					<Route path="/edit/:todoId" element={<EditToDoPage />} />
+					<Route path="*" element={<NotFound />} />
 				</Routes>
 			</TodoProvider>
 		</HashRouter>
