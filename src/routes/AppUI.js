@@ -1,19 +1,19 @@
 import React from "react";
 
-import { TodoCounter } from "../TodoCounter";
-import { TodoSearch } from "../TodoSearch";
-import { TodoList } from "../TodoList";
-import { TodoItem } from "../TodoItem";
-import { CreateTodoButton } from "../CreateTodoButton";
-import { Background } from "../ContainerWhite/Background";
-import { ContainerWhite } from "../ContainerWhite";
-import { TodosLoading } from "../TodosLoading";
-import { TodosError } from "../TodosError";
-import { EmptyTodos } from "../EmptyTodos";
-import { Modal } from "../Modal";
-import { TodoForm } from "../TodoForm";
+import { TodoCounter } from "../../ui/TodoCounter";
+import { TodoSearch } from "../../ui/TodoSearch";
+import { TodoList } from "../../ui/TodoList";
+import { TodoItem } from "../../ui/TodoItem";
+import { CreateTodoButton } from "../../ui/CreateTodoButton";
+import { Background } from "../../ui/ContainerWhite/Background";
+import { ContainerWhite } from "../../ui/ContainerWhite";
+import { TodosLoading } from "../../ui/TodosLoading";
+import { TodosError } from "../../ui/TodosError";
+import { EmptyTodos } from "../../ui/EmptyTodos";
+import { Modal } from "../../ui/Modal";
+import { TodoForm } from "../../ui/TodoForm";
 
-import { TodoContext } from "../todoContext";
+import { TodoContext } from "../../ui/todoContext";
 
 function AppUI() {
 	const {
@@ -29,17 +29,10 @@ function AppUI() {
 	return (
 		<>
 			<ContainerWhite>
-				<TodoCounter
-				// loading={loading}
-				// completed={completedTodos}
-				// total={totalTodos}
-				/>
+				<TodoCounter/>
 
 				<div className="Search-Create">
-					<TodoSearch
-					// searchValue={searchValue} // enviamos el estado a traves de la propiedad
-					// setSearchValue={setSearchValue}
-					/>
+					<TodoSearch/>
 					<CreateTodoButton setOpenModal={setOpenModal} />
 
 					{openModal && (
@@ -50,8 +43,6 @@ function AppUI() {
 				</div>
 
 				<TodoList>
-					{/* React necesita una key cuando itera desde un array */}
-					{/* defaultTodos */}
 					{loading && <TodosLoading />}
 					{error && <TodosError />}
 					{!loading && !searchedTodos.length && <EmptyTodos />}

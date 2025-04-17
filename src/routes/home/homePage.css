@@ -1,10 +1,12 @@
 body, #root {
     height: 100%;
     box-sizing: border-box;
+    margin: 0; /* Asegúrate de que no haya márgenes */
+    padding: 0; 
 }
 
 .background {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;

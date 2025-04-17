@@ -1,8 +1,8 @@
 import React from "react";
-import { AppUI } from "./AppUI";
+import { AppUI } from "./AppUI.js";
 
 import "./App.css";
-import { TodoProvider } from "../todoContext";
+import { TodoProvider } from "../ui/todoContext/index.js";
 
 function App() {
 	return (
