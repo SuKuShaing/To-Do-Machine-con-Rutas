@@ -55,6 +55,7 @@ function HomePage() {
 							text={props.text}
 							completed={props.completed}
 							onComplete={() => iCompletedTodo(props.text)} // onComplete es una función que se ejecuta cuando se hace click en el icono de check
+							onEdit={() => console.log("Soy el ConsoleLog de Editar")}
 							onDelete={() => iDeleteTodo(props.text)}
 						/>
 					))}
