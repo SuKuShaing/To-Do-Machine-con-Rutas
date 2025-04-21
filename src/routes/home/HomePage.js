@@ -51,12 +51,12 @@ function HomePage() {
 
 					{searchedTodos.map((props) => (
 						<TodoItem
-							key={props.text}
+							key={props.id}
 							text={props.text}
 							completed={props.completed}
-							onComplete={() => iCompletedTodo(props.text)} // onComplete es una función que se ejecuta cuando se hace click en el icono de check
+							onComplete={() => iCompletedTodo(props.id)} // onComplete es una función que se ejecuta cuando se hace click en el icono de check
 							onEdit={() => console.log("Soy el ConsoleLog de Editar")}
-							onDelete={() => iDeleteTodo(props.text)}
+							onDelete={() => iDeleteTodo(props.id)}
 						/>
 					))}
 				</TodoList>

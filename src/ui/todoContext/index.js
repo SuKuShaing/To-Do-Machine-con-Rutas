@@ -10,7 +10,7 @@ function TodoProvider( { children } ) {
 		iSaveItem: saveTodos,
 		loading,
 		error
-	} = useLocalStorage('todosEnLocalStorage', []); // al estado de Todos le pasamos el array de defaultTodos
+	} = useLocalStorage('todosEnLocalStorage_v2', []); // al estado de Todos le pasamos el array de defaultTodos
 	const [searchValue, setSearchValue] = React.useState("");
 	// console.log("Los usuarios buscan todos de " + searchValue);
 	const [openModal, setOpenModal] = React.useState(false);
@@ -36,9 +36,9 @@ function TodoProvider( { children } ) {
 
 
 	// Funciones
-	const iCompletedTodo = (text) => {
+	const iCompletedTodo = (id) => {
 		const newTodos = [...todos]; // copiamos el array de ToDos
-		const todoIndex = newTodos.findIndex((todo) => todo.text === text);
+		const todoIndex = newTodos.findIndex((todo) => todo.id === id);
 		if (newTodos[todoIndex].completed) {
 			newTodos[todoIndex].completed = false;
 		} else {
@@ -47,18 +47,20 @@ function TodoProvider( { children } ) {
 		saveTodos(newTodos);
 	};
 
-	const iDeleteTodo = (text) => {
+	const iDeleteTodo = (id) => {
 		const newTodos = [...todos];
-		const todoIndex = newTodos.findIndex((todo) => todo.text === text);
+		const todoIndex = newTodos.findIndex((todo) => todo.id === id);
 		newTodos.splice(todoIndex, 1); // splice elimina un elemento de un array en el indice que le indiquemos y avanza la cantidad de elementos que le indiquemos
-			saveTodos(newTodos);
+		saveTodos(newTodos);
 	};
 
 	const addTodo = (text) => {
+		const id = newTodoId(todos);
 		const newTodos = [...todos]; // copiamos el array de ToDos
 		newTodos.push({
 			text,
 			completed: false,
+			id,
 		});
 		saveTodos(newTodos);
 	};
@@ -83,5 +85,17 @@ function TodoProvider( { children } ) {
         // <TodoContext.Consumer></TodoContext.Consumer>
     )
 }
+
+// Genera un nuevo ID para el nuevo ToDo
+function newTodoId(todoList) {
+	if (!todoList.length) {
+		return 1; // si no hay ToDos, el primer ID será 1
+	}
+
+	const idList = todoList.map((todo) => todo.id); // aquí retornamos un array con los ids de los todos así [1, 2, 3, 4]
+	const idMax = Math.max(...idList) + 1;
+	return idMax;
+
+};
 
 export { TodoContext, TodoProvider };
