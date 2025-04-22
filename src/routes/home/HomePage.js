@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 import { TodoCounter } from "../../ui/TodoCounter";
 import { TodoSearch } from "../../ui/TodoSearch";
@@ -24,9 +25,11 @@ function HomePage() {
 		searchedTodos,
 		iCompletedTodo,
 		iDeleteTodo,
-		openModal,
-		setOpenModal
+		// openModal,
+		// setOpenModal
 	} = React.useContext(TodoContext);
+
+	const navigate = useNavigate();
 
 	return (
 		<>
@@ -35,13 +38,16 @@ function HomePage() {
 
 				<div className="Search-Create">
 					<TodoSearch/>
-					<CreateTodoButton setOpenModal={setOpenModal} />
+					<CreateTodoButton
+						onClick={() => navigate('/new')}
+						// setOpenModal={setOpenModal}
+					/>
 
-					{openModal && (
+					{/* {openModal && (
                         <Modal onClose={() => setOpenModal(false)}>
                             <TodoForm />
                         </Modal>
-                    )}
+                    )} */}
 				</div>
 
 				<TodoList>
@@ -55,7 +61,7 @@ function HomePage() {
 							text={props.text}
 							completed={props.completed}
 							onComplete={() => iCompletedTodo(props.id)} // onComplete es una función que se ejecuta cuando se hace click en el icono de check
-							onEdit={() => console.log("Soy el ConsoleLog de Editar")}
+							onEdit={() => navigate(`/edit/${props.id}`)} // onEdit es una función que se ejecuta cuando se hace click en el icono de editar
 							onDelete={() => iDeleteTodo(props.id)}
 						/>
 					))}
