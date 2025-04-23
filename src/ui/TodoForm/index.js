@@ -11,14 +11,14 @@ function TodoForm(props) {
 		setOpenModal
 	} = React.useContext(TodoContext);
 
-	const [newTdodoValue, setNewTodoValue] = React.useState("");
+	const [newTodoValue, setNewTodoValue] = React.useState("");
 
 	const Navigate = useNavigate();
 
 	const onSubmit = (event) => {
 		event.preventDefault(); // evita los valores por defecto entre ellos el recargar la pagina
- 		// addTodo(newTdodoValue); // agregamos el nuevo TODO al contexto global
-		props.submitEvent(newTdodoValue);
+ 		// addTodo(newTodoValue); // agregamos el nuevo TODO al contexto global
+		props.submitEvent(newTodoValue); // llamamos a la función que viene del padre y le pasamos el nuevo TODO
 		Navigate('/');
 		// setOpenModal(false); // cerramos el modal
 	}
@@ -37,7 +37,7 @@ function TodoForm(props) {
 			<label>{props.label}</label>
 			<textarea 
 				placeholder="Escribe lo que tienes que hacer"
-				value={newTdodoValue}
+				value={newTodoValue}
 				onChange={onChange}
 				required
 			/>

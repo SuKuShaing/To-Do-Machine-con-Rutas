@@ -47,6 +47,20 @@ function TodoProvider( { children } ) {
 		saveTodos(newTodos);
 	};
 
+	const iEditTodo = (id, newText) => {		
+		const newTodos = [...todos]; // copiamos el array de ToDos
+		const todoIndex = newTodos.findIndex((todo) => todo.id === id);
+
+		if (todoIndex === -1) {
+			console.error("No se encontró el todo con id:", id);
+			return;
+		}
+		
+		newTodos[todoIndex].text = newText;
+
+		saveTodos(newTodos);
+	};
+
 	const iDeleteTodo = (id) => {
 		const newTodos = [...todos];
 		const todoIndex = newTodos.findIndex((todo) => todo.id === id);
@@ -75,6 +89,7 @@ function TodoProvider( { children } ) {
 			setSearchValue,
 			searchedTodos,
 			iCompletedTodo,
+			iEditTodo,
 			iDeleteTodo,
 			addTodo,
 			openModal,
