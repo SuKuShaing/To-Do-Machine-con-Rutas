@@ -11,7 +11,7 @@ function TodoForm(props) {
 		setOpenModal
 	} = React.useContext(TodoContext);
 
-	const [newTodoValue, setNewTodoValue] = React.useState("");
+	const [newTodoValue, setNewTodoValue] = React.useState(props.defaultToDoText || "");
 
 	const Navigate = useNavigate();
 

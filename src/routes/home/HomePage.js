@@ -55,14 +55,16 @@ function HomePage() {
 					{error && <TodosError />}
 					{!loading && !searchedTodos.length && <EmptyTodos />}
 
-					{searchedTodos.map((props) => (
+					{searchedTodos.map((toDo) => (
 						<TodoItem
-							key={props.id}
-							text={props.text}
-							completed={props.completed}
-							onComplete={() => iCompletedTodo(props.id)} // onComplete es una función que se ejecuta cuando se hace click en el icono de check
-							onEdit={() => navigate(`/edit/${props.id}`)} // onEdit es una función que se ejecuta cuando se hace click en el icono de editar
-							onDelete={() => iDeleteTodo(props.id)}
+							key={toDo.id}
+							text={toDo.text}
+							completed={toDo.completed}
+							onComplete={() => iCompletedTodo(toDo.id)} // onComplete es una función que se ejecuta cuando se hace click en el icono de check
+							onEdit={() => navigate(`/edit/${toDo.id}`, {
+								state: { toDo },
+							})} // onEdit es una función que se ejecuta cuando se hace click en el icono de editar
+							onDelete={() => iDeleteTodo(toDo.id)}
 						/>
 					))}
 				</TodoList>

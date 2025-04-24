@@ -79,6 +79,12 @@ function TodoProvider( { children } ) {
 		saveTodos(newTodos);
 	};
 
+	const getToDo = (id) => {
+		const newTodos = [...todos]; // copiamos el array de ToDos
+		const todoIndex = newTodos.findIndex((todo) => todo.id === id);
+		return newTodos[todoIndex];
+	};
+
     return (
         <TodoContext.Provider value={{
 			loading,
@@ -94,6 +100,7 @@ function TodoProvider( { children } ) {
 			addTodo,
 			openModal,
 			setOpenModal,
+			getToDo,
 		}}>
 			{children}
 		</TodoContext.Provider>
