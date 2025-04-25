@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/To-Do-Machine-con-Rutas/static/css/main.2edd555b.css",
-    "main.js": "/To-Do-Machine-con-Rutas/static/js/main.a0e5134a.js",
+    "main.js": "/To-Do-Machine-con-Rutas/static/js/main.b6c70265.js",
     "index.html": "/To-Do-Machine-con-Rutas/index.html",
     "static/media/delete.svg": "/To-Do-Machine-con-Rutas/static/media/delete.5349b0b9871863a644b907f417eedd16.svg",
     "static/media/check.svg": "/To-Do-Machine-con-Rutas/static/media/check.800ef823627a3f10fb61f7e2ca5b4f6e.svg",
     "static/media/edit.svg": "/To-Do-Machine-con-Rutas/static/media/edit.900a8fd203adc364a82d0ebc6ad8dc94.svg",
     "main.2edd555b.css.map": "/To-Do-Machine-con-Rutas/static/css/main.2edd555b.css.map",
-    "main.a0e5134a.js.map": "/To-Do-Machine-con-Rutas/static/js/main.a0e5134a.js.map"
+    "main.b6c70265.js.map": "/To-Do-Machine-con-Rutas/static/js/main.b6c70265.js.map"
   },
   "entrypoints": [
     "static/css/main.2edd555b.css",
-    "static/js/main.a0e5134a.js"
+    "static/js/main.b6c70265.js"
   ]
 }
