@@ -5,9 +5,11 @@ Del To Do Machine, ahora se incluyen rutas con React Router Dom.
 ## Versión Actual de este proyecto
 https://SuKuShaing.github.io/To-Do-Machine-con-Rutas
 
-### Solución a resubir una page a github usando gh-pages
+### Solución al error al resubir una page a github usando gh-pages
+en este link está la solución original
 https://stackoverflow.com/questions/63733908/fatal-couldnt-find-remote-ref-refs-heads-gh-pages-after-runninggit-push-ori
 
+y aquí está el paso a paso traducido
 1) ya no se pudo con 
 ```sh
 npm run deploy
